@@ -8,7 +8,7 @@ const ScrollBtn = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
-      if (pageHeight - scrollPosition < 300) {
+      if (pageHeight - scrollPosition < 800) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
