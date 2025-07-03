@@ -5,12 +5,7 @@ import { IoMoonOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { VscChromeClose } from "react-icons/vsc";
 import { SlMenu } from "react-icons/sl";
-
-interface NavBarProps {
-  isDark: boolean;
-  toggleDark: () => void;
-}
-
+import type { NavBarProps } from "../../types/Type";
 const NavBar = ({ isDark, toggleDark }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -80,7 +75,6 @@ const NavBar = ({ isDark, toggleDark }: NavBarProps) => {
         </nav>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-all duration-300 ease-in-out z-50 ${
           isMenuOpen

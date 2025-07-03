@@ -7,8 +7,8 @@ const Projects = () => {
   function getResponsiveFontSize(): string {
     const minWidth = 320;
     const maxWidth = 1920;
-    const minFontSize = 1;  // rem
-    const maxFontSize = 6;  // rem
+    const minFontSize = 1;
+    const maxFontSize = 6;  
 
     const width = Math.min(Math.max(window.innerWidth, minWidth), maxWidth);
 

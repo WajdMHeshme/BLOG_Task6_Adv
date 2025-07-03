@@ -1,15 +1,5 @@
 import React, { useEffect, useRef } from "react";
-
-interface FuzzyTextProps {
-  children: React.ReactNode;
-  fontSize?: number | string;
-  fontWeight?: string | number;
-  fontFamily?: string;
-  color?: string;
-  enableHover?: boolean;
-  baseIntensity?: number;
-  hoverIntensity?: number;
-}
+import type { FuzzyTextProps } from "../../types/Type";
 
 const FuzzyText: React.FC<FuzzyTextProps> = ({
   children,
@@ -189,7 +179,6 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
 
     init();
 
-    // ✅ دعم تغيير حجم الشاشة
     const resizeHandler = () => {
       if (canvas?.cleanupFuzzyText) {
         canvas.cleanupFuzzyText();
