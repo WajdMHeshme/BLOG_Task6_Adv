@@ -7,6 +7,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Post from "./Post";
 import Pagination from "../pagenation/Pagenation";
+import { categoryColors } from "../../Data"
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -79,7 +80,10 @@ const Posts = () => {
                 {mainPost.categories.map((cat, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-pink-100 text-pink-600 px-2 py-1 dark:bg-pink-900 dark:text-pink-200 rounded-full"
+                    className={`text-xs font-medium px-3 py-1 rounded-full ${
+                      categoryColors[cat] ||
+                      "bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    }`}
                   >
                     {cat}
                   </span>
@@ -92,14 +96,14 @@ const Posts = () => {
             <div
               key={post.id}
               className="lg:col-span-6 flex flex-col sm:flex-row gap-4"
-              data-aos = "fade-left"
+              data-aos="fade-left"
             >
               <img
                 src={post.mainImage}
                 alt={post.title}
                 className="sm:max-w-full lg:max-w-[320px] object-cover"
               />
-              <div className="flex-1 sm:w-[50%] lg:w-[50%]" data-aos = "fade-left">
+              <div className="flex-1 sm:w-[50%] lg:w-[50%]" data-aos="fade-left">
                 <p className="text-sm text-author font-weighted mb-1 dark:text-white">
                   {post.author}
                 </p>
@@ -118,7 +122,10 @@ const Posts = () => {
                   {post.categories.map((cat, i) => (
                     <span
                       key={i}
-                      className="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 dark:bg-blue-900 dark:text-blue-200 rounded-full"
+                      className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                        categoryColors[cat] ||
+                        "bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                      }`}
                     >
                       {cat}
                     </span>
@@ -134,9 +141,9 @@ const Posts = () => {
                 src={bottomPost.mainImage}
                 alt={bottomPost.title}
                 className="w-full lg:w-[48%] object-cover"
-                data-aos = "fade-right"
+                data-aos="fade-right"
               />
-              <div className="w-full lg:w-[48%] flex flex-col justify-between" data-aos = "fade-left">
+              <div className="w-full lg:w-[48%] flex flex-col justify-between" data-aos="fade-left">
                 <p className="text-sm text-author font-weighted mb-1 dark:text-white">
                   {bottomPost.author}
                 </p>
@@ -155,7 +162,10 @@ const Posts = () => {
                   {bottomPost.categories.map((cat, i) => (
                     <span
                       key={i}
-                      className="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-200"
+                      className={`text-xs font-medium px-3 py-1 rounded-full ${
+                        categoryColors[cat] ||
+                        "bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                      }`}
                     >
                       {cat}
                     </span>
@@ -166,7 +176,7 @@ const Posts = () => {
           )}
         </div>
 
-        <div className="w-full mt-12 mb-6" data-aos= "fade">
+        <div className="w-full mt-12 mb-6" data-aos="fade">
           <h2 className="text-3xl font-bold text-black dark:text-white my-12">
             All blog posts
           </h2>
@@ -174,7 +184,7 @@ const Posts = () => {
 
         <div className="flex flex-wrap w-full gap-6 justify-between">
           {currentPosts.map((post) => (
-            <div key={post.id} className="w-full md:w-[48%] lg:w-[calc(90%/3)]" data-aos= "fade-up">
+            <div key={post.id} className="w-full md:w-[48%] lg:w-[calc(90%/3)]" data-aos="fade-up">
               <Post post={post} />
             </div>
           ))}

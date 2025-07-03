@@ -3,6 +3,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { postsData } from "../redux/postsData";
 import type { Post } from "../redux/postsTypes";
 import Subscribe from "../components/subscribe/Subscribe";
+import { categoryColors } from "../Data";
 
 const Blog = () => {
   const { id } = useParams();
@@ -24,11 +25,13 @@ const Blog = () => {
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-16">
       <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] gap-8">
         <div className="space-y-6 order-1 md:order-[0]">
-          <h2 className="text-xl font-semibold mb-4" data-aos="fade">Recent blog posts</h2>
+          <h2 className="text-xl font-semibold mb-4" data-aos="fade">
+            Recent blog posts
+          </h2>
           {relatedPosts.map((related) => (
             <div
               key={related.id}
-              className=" p-2 transition cursor-auto"
+              className="p-2 transition cursor-auto"
               data-aos="fade-right"
             >
               <img
@@ -52,7 +55,10 @@ const Blog = () => {
                 {related.categories.map((cat, index) => (
                   <span
                     key={index}
-                    className="text-xs bg-gray-200 text-gray-700 px-2 py-0.5"
+                    className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                      categoryColors[cat] ||
+                      "bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    }`}
                   >
                     {cat}
                   </span>

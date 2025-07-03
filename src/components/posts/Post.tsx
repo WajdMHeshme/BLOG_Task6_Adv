@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import type { PostProps } from "../../types/Type";
+import { categoryColors } from "../../Data";
 
 const Post = ({ post }: PostProps) => {
   return (
@@ -10,10 +11,12 @@ const Post = ({ post }: PostProps) => {
         alt={post.title}
         className="w-full object-cover mb-4"
       />
+
       <p className="text-sm text-author font-weighted mb-1 dark:text-white">
         {post.author}
       </p>
-      <div className="flex  justify-between mb-2">
+
+      <div className="flex justify-between items-start mb-2">
         <h3 className="text-2xl font-bold text-darkText dark:text-white">
           {post.title}
         </h3>
@@ -21,14 +24,19 @@ const Post = ({ post }: PostProps) => {
           <MdOutlineArrowOutward className="text-[24px] text-darkText dark:text-white" />
         </Link>
       </div>
+
       <p className="mb-3 text-black/80 dark:text-gray-300">
         {post.description}
       </p>
+
       <div className="flex flex-wrap gap-2">
         {post.categories.map((cat, i) => (
           <span
             key={i}
-            className="text-xs bg-pink-100 text-pink-600 px-2 py-1 dark:bg-pink-900 dark:text-pink-200 rounded-full"
+            className={`text-xs font-medium px-3 py-1 rounded-full ${
+              categoryColors[cat] ||
+              "bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-200"
+            }`}
           >
             {cat}
           </span>
