@@ -27,7 +27,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center w-full h-screen text-darkTheme dark:text-white">
+    <div className="flex justify-center items-center w-full h-screen text-darkTheme dark:text-white" data-aos = "fade">
       <FuzzyText
         fontSize={fontSize}
         fontWeight={800}

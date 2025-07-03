@@ -22,9 +22,7 @@ const Blog = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-16">
-      {/* تقسيم المحتوى إلى عمودين */}
       <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] gap-8">
-        {/* Related Posts - على اليسار */}
         <div className="space-y-6 order-1 md:order-[0]">
           <h2 className="text-xl font-semibold mb-4" data-aos="fade">Recent blog posts</h2>
           {relatedPosts.map((related) => (
@@ -64,7 +62,6 @@ const Blog = () => {
           ))}
         </div>
 
-        {/* Main Post Content - على اليمين */}
         <div data-aos="fade-left">
           <p className="text-author text-sm mb-2">Sunday, 1 Jan 2023</p>
           <div className="flex justify-between items-center mb-4 gap-2">
@@ -100,7 +97,6 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* ✅ Subscribe في أسفل الصفحة دائمًا */}
       <div className="w-full mt-8">
         <Subscribe />
       </div>

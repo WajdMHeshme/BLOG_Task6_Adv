@@ -51,7 +51,7 @@ function AppWrapper() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false });
+    AOS.init({ duration: 1500, once: false });
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
