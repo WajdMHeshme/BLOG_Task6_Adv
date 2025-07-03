@@ -36,7 +36,7 @@ const About = () => {
         hoverIntensity={0.5}
         enableHover={true}
       >
-        Page Under Development !
+       404 Page Not Found !
       </FuzzyText>
     </div>
   );
