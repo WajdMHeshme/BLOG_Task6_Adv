@@ -56,11 +56,11 @@ const Posts = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 overflow-hidden">
           {mainPost && (
-            <div className="lg:col-span-6 lg:row-span-2 flex flex-col" data-aos="fade-right">
+            <div className="lg:col-span-6 lg:row-span-2 flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-lg hover:bg-gray-50 dark:hover:bg-darkTheme/40 p-2 rounded-xl" data-aos="fade-right">
               <img
                 src={mainPost.mainImage}
                 alt={mainPost.title}
-                className="w-full object-cover mb-4"
+                className="w-full object-cover mb-4 rounded-lg"
               />
               <p className="text-sm text-author font-weighted mb-1 dark:text-white">
                 {mainPost.author}
@@ -95,13 +95,13 @@ const Posts = () => {
           {sidePosts.map((post) => (
             <div
               key={post.id}
-              className="lg:col-span-6 flex flex-col sm:flex-row gap-4"
+              className="lg:col-span-6 flex flex-col sm:flex-row gap-4 transition-transform duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-lg hover:bg-gray-50 dark:hover:bg-darkTheme/40 p-2 rounded-xl"
               data-aos="fade-left"
             >
               <img
                 src={post.mainImage}
                 alt={post.title}
-                className="sm:max-w-full lg:max-w-[320px] object-cover"
+                className="sm:max-w-full lg:max-w-[320px] object-cover rounded-lg"
               />
               <div className="flex-1 sm:w-[50%] lg:w-[50%]" data-aos="fade-left">
                 <p className="text-sm text-author font-weighted mb-1 dark:text-white">
@@ -136,11 +136,11 @@ const Posts = () => {
           ))}
 
           {bottomPost && (
-            <div className="lg:col-span-12 flex justify-between flex-col lg:flex-row gap-4 mt-6">
+            <div className="lg:col-span-12 flex justify-between flex-col lg:flex-row gap-4 mt-6 transition-transform duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-lg hover:bg-gray-50 dark:hover:bg-darkTheme/40 p-2 rounded-xl">
               <img
                 src={bottomPost.mainImage}
                 alt={bottomPost.title}
-                className="w-full lg:w-[48%] object-cover"
+                className="w-full lg:w-[48%] object-cover rounded-lg"
                 data-aos="fade-right"
               />
               <div className="w-full lg:w-[48%] flex flex-col justify-between" data-aos="fade-left">

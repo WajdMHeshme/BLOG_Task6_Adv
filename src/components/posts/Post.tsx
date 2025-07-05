@@ -5,11 +5,11 @@ import { categoryColors } from "../../Data";
 
 const Post = ({ post }: PostProps) => {
   return (
-    <div className="lg:col-span-6 lg:row-span-2 flex flex-col">
+    <div className="lg:col-span-6 lg:row-span-2 flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-lg hover:bg-gray-50 dark:hover:bg-darkTheme/40 p-2 rounded-xl">
       <img
         src={post.mainImage}
         alt={post.title}
-        className="w-full object-cover mb-4"
+        className="w-full object-cover mb-4 rounded-lg"
       />
 
       <p className="text-sm text-author font-weighted mb-1 dark:text-white">
@@ -45,6 +45,7 @@ const Post = ({ post }: PostProps) => {
     </div>
   );
 };
+
 
 export default Post;
 

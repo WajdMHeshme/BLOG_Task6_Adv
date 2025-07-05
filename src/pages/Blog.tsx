@@ -31,7 +31,7 @@ const Blog = () => {
           {relatedPosts.map((related) => (
             <div
               key={related.id}
-              className="p-2 transition cursor-auto"
+              className="p-2 transition cursor-auto transition-transform duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-lg hover:bg-gray-50 dark:hover:bg-darkTheme/40"
               data-aos="fade-right"
             >
               <img
