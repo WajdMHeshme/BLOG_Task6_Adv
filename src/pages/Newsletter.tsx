@@ -14,7 +14,7 @@ const Newsletter = () => {
 
       <div className="mt-[60px]">
         <h2 className="text-2xl font-bold mb-6 text-black dark:text-white">
-          All blog posts
+          Resent blog posts
         </h2>
         <div className="flex flex-wrap gap-6 justify-between" data-aos = "fade-up">
           {firstThreeOtherPosts.map((post) => (
