@@ -45,7 +45,12 @@ const routes = createBrowserRouter([
       },
     ],
   },
-]);
+  
+],
+  {
+    basename: "/BLOG_Task6_Adv",
+  }
+);
 
 function AppWrapper() {
   const [loading, setLoading] = useState(true);
